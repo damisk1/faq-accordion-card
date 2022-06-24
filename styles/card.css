@@ -1,0 +1,20 @@
+.card {
+    background-color: var(--white);
+    border-radius: 2rem;
+    box-shadow: 0px 2rem 3rem -1rem var(--very_dark_grayish_blue);
+    margin: 12rem 2rem 2rem 2rem;
+    max-width: 400px;
+    min-height: 545px; 
+    padding: 0 2rem 2rem 2rem;
+    width: 90%;
+} 
+
+@media screen and (min-width: 1440px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: initial;
+        padding: initial;
+        width: 980px;
+    }
+}

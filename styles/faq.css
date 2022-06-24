@@ -1,0 +1,79 @@
+.faq-titulo {
+    color: var(--very_dark_desaturated_blue);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+dt {
+    color: var(--very_dark_grayish_blue);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    padding: 1.4rem 0;
+    transition: .1s;
+}
+dt.ativo {
+    color: var(--very_dark_desaturated_blue);
+    font-weight: 700;
+}
+dt::after {
+    background: url(../images/icon-arrow-down.svg) center no-repeat;
+    content: '';
+    display: inline-block;
+    height: 12px;
+    margin-left: 10px;
+    width: 12px;
+}
+dt.ativo::after {animation: spinArrow .5s forwards;}
+
+dt:hover {color: var(--soft_red);}
+
+@keyframes spinArrow {
+    from {
+        transform: rotateX(0);
+    }
+    to {
+        transform: rotateX(-160deg);
+    }
+}
+
+.faq__accordion-lista__item {border-bottom: 1px solid var(--light_grayish_blue);}
+
+dd {
+    color: var(--dark_grayish_blue);
+    display: none;
+    height: 0;
+    line-height: 1.6;
+    opacity: 0;
+    padding-right: 20px;
+}
+dd.ativo {
+    animation: slideDown .6s forwards;
+    display: block;
+    height: 100%;
+    margin-bottom: 1.4rem;
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 100px;
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .faq {padding: 6rem 10rem 5rem 0rem;}
+
+    .faq-titulo {
+        margin-bottom: 2rem;
+        text-align: initial;
+    }
+
+    dt {font-size: 1.3rem;}
+}
